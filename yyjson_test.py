@@ -1,8 +1,7 @@
 import time
 
-from ct import ct_init
-#from yyjson import yyjson_doc, yyjson_val, seq_yyjson_arr_size, seq_yyjson_doc_free
-from yyjson import yyjson_doc, yyjson_val, seq_yyjson_arr_size, \
+from internal.ct import ct_init
+from internal.yyjson import yyjson_doc, yyjson_val, seq_yyjson_arr_size, \
     seq_yyjson_arr_get_first, seq_yyjson_get_str, seq_unsafe_yyjson_get_next, \
     seq_yyjson_doc_free, seq_yyjson_read, seq_yyjson_doc_get_root, \
     seq_yyjson_doc_get_read_size, seq_yyjson_doc_get_val_count, seq_yyjson_obj_get, \
@@ -267,22 +266,7 @@ def write_test():
     
     seq_yyjson_mut_doc_free(doc)
     print('9')
-    
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_null(cobj, cobj, cobj) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_true(cobj, cobj, cobj) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_bool(cobj, cobj, cobj, bool) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_int(cobj, cobj, cobj, int) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_real(cobj, cobj, cobj, float) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_str(cobj, cobj, cobj, cobj) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_strn(cobj, cobj, cobj, cobj, int) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_strcpy(cobj, cobj, cobj, cobj) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_strncpy(cobj, cobj, cobj, cobj, int) -> bool
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_arr(cobj, cobj, cobj) -> cobj
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_obj(cobj, cobj, cobj) -> cobj
-    # from C import LIBRARY.seq_yyjson_mut_obj_add_val(cobj, cobj, cobj, cobj) -> bool
-    
-    
-    
+
 
 if __name__ == "__main__":
     ct_init()
@@ -305,7 +289,7 @@ if __name__ == "__main__":
         
         s = doc.mut_write()
         print(s)
-        
+    
     # test()
     
     print('OK')
@@ -319,3 +303,4 @@ if __name__ == "__main__":
     #     val = yyjson_obj_iter_get_val(key);
     #     your_func(key, val);
     # }
+

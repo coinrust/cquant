@@ -25,7 +25,7 @@ export CODON_PYTHON=/path/to/libpython3.11.so
 Run strategies with Codon:
 
 ```shell
-codon run -release foundation.py
+codon run -release binance_ws_demo.py
 ```
 
 Implement your trading strategies in Python. They can take advantage of the Bybit API wrapper, websocket, and other libraries.

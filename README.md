@@ -25,7 +25,7 @@ export CODON_PYTHON=/path/to/libpython3.11.so
 使用 Codon 运行策略:
 
 ```shell
-codon run -release foundation.py
+codon run -release binance_ws_demo.py
 ```
 
 使用 Python 实现您的交易策略。可以利用 Bybit API 封装、websocket 和其他库。
