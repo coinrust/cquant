@@ -1,4 +1,4 @@
-## 基于 Codon 的量化交易系统精要
+## 基于 Codon 的量化交易
 
 这是一个使用 Codon,Python 和 C++ 开发的开源量化交易系统。其中包括:
 
@@ -11,7 +11,7 @@
 ### 需求
 
 * Python 3.11+
-* Codon 运行时
+* [Codon](https://github.com/exaloop/codon)
 * Bybit 账户和 API 密钥
 
 ### 使用

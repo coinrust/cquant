@@ -1,4 +1,4 @@
-## essentials-of-codon-quant
+## Quantitative trading system based on codon
 
 This is an open source quantitative trading system built with Codon, Python and C++ for performance. It includes:
 
@@ -11,7 +11,7 @@ This is an open source quantitative trading system built with Codon, Python and 
 ### Requirements
 
 * Python 3.11+
-* Codon runtime
+* [Codon](https://github.com/exaloop/codon)
 * Bybit account and API keys
 
 ### Usage
