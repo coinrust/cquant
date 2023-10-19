@@ -1,5 +1,4 @@
-from typing import Dict
-from ct import LIBRARY, ct_init
+from ct import LIBRARY
 from yyjson import yyjson_doc, yyjson_mut_doc, yyjson_val
 from binance_model import ExchangeInfo, KlineItem, OrderBookItem, OrderBook, \
     PositionInfo, BalanceInfo, OrderInfo
@@ -186,7 +185,7 @@ class BinanceClient:
         # endTime	LONG	NO	结束时间
         # limit	INT	NO	默认值:500 最大值:1500.
         
-        query_values: Dict[str, str] = {}
+        query_values: dict[str, str] = {}
         query_values["symbol"] = symbol
         query_values["interval"] = interval
         if limit > 0:
@@ -948,141 +947,3 @@ class BinanceClient:
         seq_binance_client_do_post(self.p, path.ptr, body.ptr, sign, __ptr__(res))
         return res
 
-
-if __name__ == "__main__":
-    ct_init()
-    
-    # read
-    # access_key = "ACKw0Lk84V6TV1iifPjsNjDLDAtiE1Ex9jf4tMCZEoGAkTMY0gDsPPMqomckfrF8"
-    # secret_key = "FA3u3wORvDOg89qBb6ESkQhB9VHgRPvBVAaP6cAMbcWkjNjPTCDLqEAxbDMbrX3h"
-    
-    # read/write
-    # access_key = "9iatcCB5T52TJnvZgyn6OLjQNOPOTnRX3SrjL227rRJfPW1JIhK2rf3ejJCbm5ZW"
-    # secret_key = "xQ9mRMrZb90voFsOE3cmCRVf0QZLh45lWlgNui10suUAeOW2XsSTbG1LeM7wR8hs"
-    
-    # 可能是ip问题
-    # {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action, request ip: 172.233.90.165"}
-    
-    # b = BinanceClient(False, access_key, secret_key)
-    
-    # testnet
-    access_key = "09ae2d615d4ad6a15a22469ae5109b4ab16918bb200fe5cc67d6ece93adf55b2"
-    secret_key = "27dad28bf0aaf20aed72884e3b6159b453d8996a6d264d8bf18e737e15651a06"
-    
-    b = BinanceClient(True, access_key, secret_key)
-    
-    # time.sleep(3)
-    
-    symbol = "BTCUSDT"
-    
-    # try:
-    #     server_time = b.fetch_public_time()
-    #     print(server_time)
-    # except ValueError as e:
-    #     print(e)
-        
-    # try:
-    #     exch_info = b.fetch_exchange_info(symbol=symbol)
-    #     print(exch_info)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     kline = b.fetch_kline(symbol=symbol, interval="1m", limit=5, start=0, end=0)
-    #     print(kline)
-    # except ValueError as e:
-    #     print(e)
-        
-    # try:
-    #     ob = b.fetch_orderbook(symbol=symbol, limit=5)
-    #     print(ob)
-    # except ValueError as e:
-    #     print(e)
-
-    # try:
-    #     a = b.fetch_position_mode(symbol=symbol)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.switch_position_mode(symbol=symbol, dual_side_position=True)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.set_leverage(symbol=symbol, leverage=15)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.place_order(symbol=symbol, side="BUY", position_side="LONG", \
-    #         order_type="LIMIT", qty="0.001", price="20000", time_in_force="GTC", \
-    #         client_order_id="", reduce_only=False)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     # 198574109438
-    #     # UdiCIUrKYXUTlL6X3GpLaD
-    #     a = b.cancel_order(symbol=symbol, order_id=0, client_order_id="UdiCIUrKYXUTlL6X3GpLaD")
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.cancel_orders(symbol=symbol)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-        
-    # try:
-    #     a = b.fetch_balance()
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.fetch_orders(symbol=symbol)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.fetch_order(symbol=symbol, order_id=198633222604)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     # fetch_all_orders(self, symbol: str, order_id: int=0, \
-    #     # start_time: int=0, end_time: int=0, limit: int=0)
-    #     a = b.fetch_all_orders(symbol=symbol, limit=5)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.fetch_commission_rate(symbol=symbol)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    # try:
-    #     a = b.fetch_positions(symbol=symbol)
-    #     print(a)
-    # except ValueError as e:
-    #     print(e)
-    
-    try:
-        a = b.listen_key()
-        # a = b.put_listen_key()
-        print(a)
-    except ValueError as e:
-        print(e)
-    
-    b.release()
-    
