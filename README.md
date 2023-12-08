@@ -1,4 +1,6 @@
-## 基于 Codon 的量化交易
+## 基于 Codon 的量化交易(已弃用)
+
+**注意：** 该项目已弃用，推荐使用 [moxt](https://github.com/f0cii/moxt) 作为替代。
 
 这是一个使用 Codon,Python 和 C++ 开发的开源量化交易系统。其中包括:
 

@@ -1,4 +1,6 @@
-## Quantitative trading system based on codon
+## Quantitative trading system based on codon (Deprecated)
+
+**注意：** Note: This project has been deprecated. We recommend using [moxt](https://github.com/f0cii/moxt) as a replacement.
 
 This is an open source quantitative trading system built with Codon, Python and C++ for performance. It includes:
 
